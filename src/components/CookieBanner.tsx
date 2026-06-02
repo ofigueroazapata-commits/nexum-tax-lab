@@ -46,7 +46,7 @@ export default function CookieBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed bottom-6 inset-x-0 z-[200] flex justify-center px-4"
+          style={{ position: "fixed", bottom: "24px", left: 0, right: 0, zIndex: 200, display: "flex", justifyContent: "center", padding: "0 16px" }}
         >
           <div
             className="w-full max-w-2xl rounded-2xl border border-white/[0.1] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
