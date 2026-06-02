@@ -110,7 +110,7 @@ export const metadata: Metadata = {
     shortcut: "/logo-mark.png",
   },
   verification: {
-    google: "pendiente-verificacion-google",
+    google: "OhlKArZz2DH5o5VvtbCaVSeFB_KgZclGVtsLw2lNdFU",
   },
 };
 
