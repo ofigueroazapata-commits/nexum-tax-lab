@@ -58,12 +58,19 @@ export default function CookieBanner() {
         flexWrap: "wrap",
       }}
     >
-      <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px", lineHeight: "1.5", textAlign: "center", margin: 0 }}>
-        Utilizamos cookies analíticas (Google Analytics) para mejorar su experiencia.{" "}
-        <Link href="/politica-de-privacidad" style={{ color: "#0CBBD4" }}>
-          Más información
-        </Link>
-      </p>
+      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+        <div style={{ flexShrink: 0, width: "36px", height: "36px", borderRadius: "10px", background: "rgba(12,187,212,0.1)", border: "1px solid rgba(12,187,212,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#0CBBD4" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+          </svg>
+        </div>
+        <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px", lineHeight: "1.5", margin: 0 }}>
+          Utilizamos cookies analíticas (Google Analytics) para mejorar su experiencia.{" "}
+          <Link href="/politica-de-privacidad" style={{ color: "#0CBBD4" }}>
+            Más información
+          </Link>
+        </p>
+      </div>
       <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
         <button
           onClick={reject}
