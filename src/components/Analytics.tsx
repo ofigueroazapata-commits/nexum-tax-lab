@@ -18,16 +18,16 @@ export default function Analytics() {
     const consent = localStorage.getItem("cookie-consent");
     if (consent !== "accepted") return;
 
+    // Initialize gtag BEFORE loading the script
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function (...args) { window.dataLayer.push(args); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID, { anonymize_ip: true });
+    // Now load the script
     const script = document.createElement("script");
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
     script.async = true;
     document.head.appendChild(script);
-    script.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function (...args) { window.dataLayer.push(args); };
-      window.gtag("js", new Date());
-      window.gtag("config", GA_ID, { anonymize_ip: true });
-    };
   }, []);
 
   return null;
