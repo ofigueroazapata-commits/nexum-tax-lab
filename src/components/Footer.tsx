@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LogoMark from "./LogoMark";
 
 export default function Footer() {
@@ -77,12 +78,12 @@ export default function Footer() {
             © 2026 Nexum Tax Lab. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-white/25 hover:text-white/50 transition-colors">
+            <Link href="/politica-de-privacidad" className="text-xs text-white/25 hover:text-white/50 transition-colors">
               Política de Privacidad
-            </a>
-            <a href="#" className="text-xs text-white/25 hover:text-white/50 transition-colors">
+            </Link>
+            <Link href="/aviso-legal" className="text-xs text-white/25 hover:text-white/50 transition-colors">
               Aviso Legal
-            </a>
+            </Link>
           </div>
         </div>
       </div>
