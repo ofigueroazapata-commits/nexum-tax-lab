@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: "Nexum Tax Lab <onboarding@resend.dev>",
+      from: "Nexum Tax Lab <noreply@nexumtaxlab.com>",
       to: [process.env.CONTACT_EMAIL!],
       replyTo: email,
       subject: `[Nexum Tax Lab] ${subject} — ${name}`,
