@@ -35,8 +35,18 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("sent");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("sent");
+    } catch {
+      setStatus("idle");
+      alert("Error al enviar el mensaje. Por favor inténtelo de nuevo.");
+    }
   };
 
   const inputClass =
@@ -79,7 +89,7 @@ export default function Contact() {
             {/* Contact details */}
             <div className="mt-10 space-y-5">
               <a
-                href="mailto:info@nexumtaxlab.com"
+                href="mailto:nexumtaxlab@gmail.com"
                 className="group flex items-center gap-4 cursor-pointer"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#0CBBD4]/20 bg-[#0CBBD4]/10 text-[#0CBBD4] flex-shrink-0 group-hover:bg-[#0CBBD4]/20 transition-colors">
@@ -90,7 +100,7 @@ export default function Contact() {
                 <div>
                   <p className="text-xs text-white/30 mb-0.5">Email</p>
                   <p className="text-sm font-medium text-white group-hover:text-[#0CBBD4] transition-colors">
-                    info@nexumtaxlab.com
+                    nexumtaxlab@gmail.com
                   </p>
                 </div>
               </a>

@@ -37,7 +37,7 @@ export default function AvisoLegal() {
               <li><span className="text-white/40">Denominación:</span> Nexum Tax Lab</li>
               <li><span className="text-white/40">Profesional responsable:</span> Daniel Figueroa Zapata</li>
               <li><span className="text-white/40">Actividad:</span> Asesoría fiscal y tributaria internacional</li>
-              <li><span className="text-white/40">Correo electrónico:</span> info@nexumtaxlab.com</li>
+              <li><span className="text-white/40">Correo electrónico:</span> nexumtaxlab@gmail.com</li>
               <li><span className="text-white/40">Sitio web:</span> https://nexumtaxlab.com</li>
             </ul>
           </section>
@@ -97,7 +97,7 @@ export default function AvisoLegal() {
 
         <div className="mt-16 rounded-2xl border border-[#0CBBD4]/20 bg-[#0CBBD4]/5 p-8 text-center">
           <h2 className="font-heading text-xl font-bold text-white mb-2">¿Tiene alguna consulta legal?</h2>
-          <p className="text-white/50 text-sm mb-6">Puede contactarnos en info@nexumtaxlab.com para cualquier cuestión relacionada con el uso de este sitio.</p>
+          <p className="text-white/50 text-sm mb-6">Puede contactarnos en nexumtaxlab@gmail.com para cualquier cuestión relacionada con el uso de este sitio.</p>
           <Link href="/#contacto" className="btn-shimmer inline-block rounded-full px-8 py-3.5 text-sm font-semibold text-black">
             Contactar
           </Link>

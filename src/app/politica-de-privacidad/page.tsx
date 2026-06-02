@@ -36,7 +36,7 @@ export default function PoliticaPrivacidad() {
             <ul className="space-y-1 pl-4 border-l border-white/[0.08]">
               <li><span className="text-white/40">Denominación:</span> Nexum Tax Lab</li>
               <li><span className="text-white/40">Actividad:</span> Asesoría fiscal y tributaria internacional</li>
-              <li><span className="text-white/40">Correo electrónico:</span> info@nexumtaxlab.com</li>
+              <li><span className="text-white/40">Correo electrónico:</span> nexumtaxlab@gmail.com</li>
               <li><span className="text-white/40">Sitio web:</span> https://nexumtaxlab.com</li>
             </ul>
           </section>
@@ -95,7 +95,7 @@ export default function PoliticaPrivacidad() {
 
           <section className="space-y-3">
             <h2 className="text-lg font-semibold text-white">6. Sus derechos</h2>
-            <p>En virtud del RGPD y la LOPD-GDD, puede ejercer los siguientes derechos enviando un correo a <a href="mailto:info@nexumtaxlab.com" className="text-[#0CBBD4] hover:underline">info@nexumtaxlab.com</a> con copia de su documento de identidad:</p>
+            <p>En virtud del RGPD y la LOPD-GDD, puede ejercer los siguientes derechos enviando un correo a <a href="mailto:nexumtaxlab@gmail.com" className="text-[#0CBBD4] hover:underline">nexumtaxlab@gmail.com</a> con copia de su documento de identidad:</p>
             <ul className="list-disc list-inside space-y-1 pl-2">
               <li><strong className="text-white/80">Acceso:</strong> conocer qué datos tratamos sobre usted</li>
               <li><strong className="text-white/80">Rectificación:</strong> corregir datos inexactos o incompletos</li>
@@ -127,7 +127,7 @@ export default function PoliticaPrivacidad() {
 
         <div className="mt-16 rounded-2xl border border-[#0CBBD4]/20 bg-[#0CBBD4]/5 p-8 text-center">
           <h2 className="font-heading text-xl font-bold text-white mb-2">¿Tiene alguna consulta sobre sus datos?</h2>
-          <p className="text-white/50 text-sm mb-6">Contáctenos en info@nexumtaxlab.com y le responderemos en el plazo máximo de un mes.</p>
+          <p className="text-white/50 text-sm mb-6">Contáctenos en nexumtaxlab@gmail.com y le responderemos en el plazo máximo de un mes.</p>
           <Link href="/#contacto" className="btn-shimmer inline-block rounded-full px-8 py-3.5 text-sm font-semibold text-black">
             Contactar
           </Link>

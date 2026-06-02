@@ -52,10 +52,10 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <a
-                  href="mailto:info@nexumtaxlab.com"
+                  href="mailto:nexumtaxlab@gmail.com"
                   className="text-sm text-white/40 hover:text-[#0CBBD4] transition-colors"
                 >
-                  info@nexumtaxlab.com
+                  nexumtaxlab@gmail.com
                 </a>
               </li>
               <li>

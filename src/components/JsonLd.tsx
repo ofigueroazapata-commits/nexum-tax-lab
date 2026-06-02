@@ -9,7 +9,7 @@ export default function JsonLd() {
     image: "https://nexumtaxlab.com/logo-full.png",
     description:
       "Asesoría especializada en fiscalidad internacional, planificación patrimonial, estructuración de operaciones complejas, NHR Portugal, convenios de doble imposición, régimen FEAC, fiscalidad de criptomonedas y derecho mercantil en entornos transfronterizos.",
-    email: "info@nexumtaxlab.com",
+    email: "nexumtaxlab@gmail.com",
     sameAs: ["https://es.linkedin.com/in/danielfigueroazapata43"],
     areaServed: { "@type": "Place", name: "Internacional" },
     knowsAbout: [
