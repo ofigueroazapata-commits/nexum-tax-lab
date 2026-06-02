@@ -43,19 +43,19 @@ export default function CookieBanner() {
     <div
       style={{
         position: "fixed",
-        bottom: "24px",
-        left: "50%",
-        transform: "translateX(-50%)",
+        bottom: 0,
+        left: 0,
+        width: "100vw",
         zIndex: 200,
-        width: "100%",
-        maxWidth: "672px",
-        padding: "0 16px",
-        boxSizing: "border-box",
+        display: "flex",
+        justifyContent: "center",
+        padding: "0 16px 24px 16px",
+        pointerEvents: "none",
       }}
     >
           <div
             className="w-full rounded-2xl border border-white/[0.1] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
-            style={{ background: "rgba(8,13,28,0.96)", backdropFilter: "blur(20px)" }}
+            style={{ background: "rgba(8,13,28,0.96)", backdropFilter: "blur(20px)", maxWidth: "672px", pointerEvents: "auto" }}
           >
             {/* Icon */}
             <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(12,187,212,0.1)", border: "1px solid rgba(12,187,212,0.2)" }}>
