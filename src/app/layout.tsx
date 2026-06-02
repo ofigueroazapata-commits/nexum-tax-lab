@@ -4,6 +4,7 @@ import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
 import CookieBanner from "@/components/CookieBanner";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -132,6 +133,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <Analytics />
+        <VercelAnalytics />
         <CookieBanner />
       </body>
     </html>
