@@ -4,7 +4,6 @@ import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
 import CookieBanner from "@/components/CookieBanner";
-import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({
   subsets: ["latin"],
