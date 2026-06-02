@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 export default function CookieBanner() {
@@ -38,18 +37,24 @@ export default function CookieBanner() {
     setVisible(false);
   };
 
+  if (!visible) return null;
+
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-          style={{ position: "fixed", bottom: "24px", left: 0, right: 0, zIndex: 200, display: "flex", justifyContent: "center", padding: "0 16px" }}
-        >
+    <div
+      style={{
+        position: "fixed",
+        bottom: "24px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 200,
+        width: "100%",
+        maxWidth: "672px",
+        padding: "0 16px",
+        boxSizing: "border-box",
+      }}
+    >
           <div
-            className="w-full max-w-2xl rounded-2xl border border-white/[0.1] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+            className="w-full rounded-2xl border border-white/[0.1] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
             style={{ background: "rgba(8,13,28,0.96)", backdropFilter: "blur(20px)" }}
           >
             {/* Icon */}
@@ -83,8 +88,6 @@ export default function CookieBanner() {
               </button>
             </div>
           </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    </div>
   );
 }
