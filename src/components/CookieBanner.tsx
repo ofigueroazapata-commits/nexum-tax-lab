@@ -12,9 +12,25 @@ export default function CookieBanner() {
     if (!consent) setVisible(true);
   }, []);
 
+  const loadGA = () => {
+    if (typeof window === "undefined") return;
+    const script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-WVFL913QSL";
+    script.async = true;
+    document.head.appendChild(script);
+    script.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      window.gtag = function (...args: any[]) { window.dataLayer.push(args); };
+      window.gtag("js", new Date());
+      window.gtag("config", "G-WVFL913QSL", { anonymize_ip: true });
+    };
+  };
+
   const accept = () => {
     localStorage.setItem("cookie-consent", "accepted");
     setVisible(false);
+    loadGA();
   };
 
   const reject = () => {
@@ -45,7 +61,7 @@ export default function CookieBanner() {
 
             {/* Text */}
             <p className="text-sm text-white/55 leading-relaxed flex-1">
-              Utilizamos cookies técnicas estrictamente necesarias para el funcionamiento del sitio. No empleamos cookies de seguimiento ni publicidad.{" "}
+              Utilizamos cookies analíticas (Google Analytics) para entender cómo se usa el sitio y mejorar su experiencia. Puede aceptar o rechazar su uso.{" "}
               <Link href="/politica-de-privacidad" className="text-[#0CBBD4] hover:underline">
                 Más información
               </Link>

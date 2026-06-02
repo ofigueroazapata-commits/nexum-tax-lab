@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
+import Analytics from "@/components/Analytics";
+import CookieBanner from "@/components/CookieBanner";
 import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({
@@ -130,6 +132,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {children}
+        <Analytics />
         <CookieBanner />
       </body>
     </html>
