@@ -46,10 +46,10 @@ export default function CookieBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed bottom-6 left-0 right-0 z-[200] w-full max-w-2xl mx-auto px-4"
+          className="fixed bottom-6 inset-x-0 z-[200] flex justify-center px-4"
         >
           <div
-            className="rounded-2xl border border-white/[0.1] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+            className="w-full max-w-2xl rounded-2xl border border-white/[0.1] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
             style={{ background: "rgba(8,13,28,0.96)", backdropFilter: "blur(20px)" }}
           >
             {/* Icon */}
