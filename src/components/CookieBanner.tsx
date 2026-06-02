@@ -11,25 +11,10 @@ export default function CookieBanner() {
     if (!consent) setVisible(true);
   }, []);
 
-  const loadGA = () => {
-    if (typeof window === "undefined") return;
-    // Initialize dataLayer and gtag BEFORE loading the script
-    window.dataLayer = window.dataLayer || [];
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    window.gtag = function (...args: any[]) { window.dataLayer.push(args); };
-    window.gtag("js", new Date());
-    window.gtag("config", "G-WVFL913QSL", { anonymize_ip: true });
-    // Now load the script
-    const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-WVFL913QSL";
-    script.async = true;
-    document.head.appendChild(script);
-  };
-
   const accept = () => {
     localStorage.setItem("cookie-consent", "accepted");
     setVisible(false);
-    loadGA();
+    window.dispatchEvent(new Event("cookie-accepted"));
   };
 
   const reject = () => {

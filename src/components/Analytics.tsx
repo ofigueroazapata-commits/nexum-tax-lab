@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Script from "next/script";
 
 const GA_ID = "G-WVFL913QSL";
 
@@ -13,22 +14,35 @@ declare global {
 }
 
 export default function Analytics() {
-  useEffect(() => {
-    // Only load on return visits where consent was already given
-    const consent = localStorage.getItem("cookie-consent");
-    if (consent !== "accepted") return;
+  const [consented, setConsented] = useState(false);
 
-    // Initialize gtag BEFORE loading the script
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function (...args) { window.dataLayer.push(args); };
-    window.gtag("js", new Date());
-    window.gtag("config", GA_ID, { anonymize_ip: true });
-    // Now load the script
-    const script = document.createElement("script");
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    script.async = true;
-    document.head.appendChild(script);
+  useEffect(() => {
+    // Check on mount (return visits)
+    if (localStorage.getItem("cookie-consent") === "accepted") {
+      setConsented(true);
+    }
+    // Listen for accept event from CookieBanner (first visit)
+    const handler = () => setConsented(true);
+    window.addEventListener("cookie-accepted", handler);
+    return () => window.removeEventListener("cookie-accepted", handler);
   }, []);
 
-  return null;
+  if (!consented) return null;
+
+  return (
+    <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}
+      </Script>
+    </>
+  );
 }
