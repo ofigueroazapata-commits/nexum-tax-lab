@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 116" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Main body: bold 7 shape -->
+  <path
+    d="M10,5 L90,5 Q95,5 95,10 L95,36 L76,111 Q74,117 68,117 L46,117 Q40,117 42,111 L62,36 L10,36 Q5,36 5,31 L5,10 Q5,5 10,5 Z"
+    fill="#0CBBD4"
+  />
+  <!-- Inner triangle notch at the bend -->
+  <path d="M58,40 L86,40 L73,60 Z" fill="#000000"/>
+</svg>
